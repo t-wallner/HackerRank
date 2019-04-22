@@ -1,3 +1,5 @@
+##
+
 def get_minimum_cost(k, c):
     c.sort()
     minimum_cost = 0
