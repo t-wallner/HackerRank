@@ -1,3 +1,17 @@
+def min_max(l, k):
+    """Given a list of integers, l, and a single integer k, find a list of length k from elements of l such
+    that its unfairness is minimized. Call that array sub_l. Unfairness of an array is calculated as
+    max(sub_l)-min(sub_l)"""
+    l.sort()
+    unfairness = -1
+    for i in range(0, len(l)-k+1):
+        sub_list_unfairness = l[i+k-1] - l[i]
+        if sub_list_unfairness < unfairness or unfairness < 0:
+            unfairness = sub_list_unfairness
+
+    return unfairness
+
+
 def get_minimum_cost(k, c):
     c.sort()
     minimum_cost = 0
